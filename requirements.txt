@@ -1,1 +1,13 @@
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary
+python-jose
+passlib[bcrypt]
+boto3
+pypdf
+pandas
+python-docx
+unstructured
+python-multipart
 
