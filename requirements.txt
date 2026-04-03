@@ -1,0 +1,1 @@
+fastapiuvicornsqlalchemypsycopg2-binarypython-josepasslib[bcrypt]boto3pypdfpandaspython-docxbeautifulsoup4requestsopenaistripepython-multipartpgvector
