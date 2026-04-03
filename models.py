@@ -46,7 +46,7 @@ class Chunk(Base):
     document_id = Column(Integer, ForeignKey("documents.id"), nullable=True)
     collection_id = Column(Integer, ForeignKey("collections.id"))
     content = Column(Text)
-    embedding = Column(Text, nullable=True)  # Note: Consider pgvector 'Vector' type here
+    embedding = Column(Text, nullable=True)
     source_url = Column(String, nullable=True)
 
 class WebsiteSource(Base):
