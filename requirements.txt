@@ -1,1 +1,16 @@
-fastapiuvicornsqlalchemypsycopg2-binarypython-josepasslib[bcrypt]boto3pypdfpandaspython-docxbeautifulsoup4requestsopenaistripepython-multipartpgvector
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary
+python-jose
+passlib[bcrypt]
+boto3
+pypdf
+pandas
+python-docx
+beautifulsoup4
+requests
+openai
+stripe
+python-multipart
+pgvector
