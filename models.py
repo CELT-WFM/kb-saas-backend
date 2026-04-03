@@ -57,8 +57,6 @@ class WebsiteSource(Base):
     crawl_depth = Column(Integer, default=2)
     refresh_days = Column(Integer, default=3)
     last_crawled = Column(DateTime(timezone=True), nullable=True)
-🛠️ Architecture Recommendations
-PGVector Integration: In your Chunk model, you currently have embedding = Column(Text). Since you had pgvector in your requirements, you should ideally use the actual vector type for performance:
 
 Python
 
