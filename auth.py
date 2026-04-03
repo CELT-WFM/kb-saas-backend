@@ -1,2 +1,16 @@
-from fastapi import Depends, HTTPExceptionfrom fastapi.security import OAuth2PasswordBearerfrom jose import JWTError, jwtfrom datetime import datetime, timedeltafrom passlib.context import CryptContextimport os, secretsSECRET_KEY = os.getenv("SECRET_KEY", "change-me-please")ALGORITHM = "HS256"ACCESS_TOKEN_EXPIRE_MINUTES = 60oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/login")pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")def hash_password(pw): return pwd_context.hash(pw)def verify_password(pw, hashed): return pwd_context.verify(pw, hashed)def create_access_token(data: dict):    to_encode = data.copy()    expire = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)    to_encode.update({"exp": expire})    return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)def verify_token(token: str = Depends(oauth2_scheme)):    try:        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])        user_id = payload.get("user_id")        if user_id is None:            raise HTTPException(status_code=401, detail="Invalid token")        return user_id    except JWTError:        raise HTTPException(status_code=401, detail="Invalid token")def generate_api_key(): return secrets.token_urlsafe(32)
-
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary
+python-jose
+passlib[bcrypt]
+boto3
+pypdf
+pandas
+python-docx
+beautifulsoup4
+requests
+openai
+stripe
+python-multipart
+pgvector
