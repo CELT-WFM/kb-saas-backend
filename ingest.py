@@ -1,7 +1,3 @@
-Here is your FastAPI router code formatted correctly for readability. I've organized the imports, added proper spacing between functions, and cleaned up the indentation so it’s easy to debug.
-
-Python
-
 import os
 import boto3
 import openai
