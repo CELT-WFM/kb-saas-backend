@@ -57,9 +57,3 @@ class WebsiteSource(Base):
     crawl_depth = Column(Integer, default=2)
     refresh_days = Column(Integer, default=3)
     last_crawled = Column(DateTime(timezone=True), nullable=True)
-
-Python
-
-from pgvector.sqlalchemy import Vector
-# inside Chunk class
-embedding = Column(Vector(1536)) # 1536 is the dimension for 'text-embedding-3-small'
